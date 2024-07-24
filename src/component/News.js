@@ -28,7 +28,7 @@ export class New extends Component {
     document.title = `${this.capital(this.props.category)}-News Monkey`;
   }
   async updateNew () {
-    // {this.props.setProgress(10)}
+    {this.props.setProgress(10)}
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page}&pagesize=${this.props.pagesize}`;
     // {this.setState({loading : true})}
     let data = await fetch(url);
@@ -39,7 +39,7 @@ export class New extends Component {
       totalResults:parseData.totalResults,
       loading :false
     })
-    // {this.props.setProgress(100)}
+    {this.props.setProgress(100)}
   }
   async componentDidMount(){
     this.updateNew();
